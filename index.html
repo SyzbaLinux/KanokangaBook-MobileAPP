@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RichyCash Mobile</title>
+    <style>
+        body{
+            background-color: #E5EFF1 !important
+        }
+        .preloader {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            z-index: 99999999;
+            overflow: visible;
+            background: url(/preloader.gif) no-repeat center center;
+            background-size: 50%;
+            background-color: #E5EFF1
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () {
+                var preloader = document.getElementById("preloader");
+                preloader.style.transition = "opacity 0.5s";
+                preloader.style.opacity = "0";
+                preloader.addEventListener("transitionend", function () {
+                    preloader.style.display = "none";
+                }, { once: true });
+            }, 300);
+        });
+    </script>
+
+</head>
+
+<body>
+<!-- start preloader -->
+<div class="preloader" id="preloader"></div>
+<!-- end preloader -->
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
